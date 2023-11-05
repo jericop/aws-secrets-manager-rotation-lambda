@@ -14,4 +14,4 @@ jobs:
 
           docker run -d -p $local_registry_port:5000 --rm --name registry registry:2
 
-          build-and-push-images.sh localhost:$local_registry_port/${{ github.repository }}
+          ./build-images.sh localhost:$local_registry_port/${{ github.repository }}

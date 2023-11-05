@@ -23,5 +23,5 @@ jobs:
       - name: Build and Push Images to local registry
         run: |
           for registry_repo in $(cat images.json | jq -r '.push_to_repos | .[]'); do
-            build-and-push-images.sh $registry_repo
+            ./build-images.sh $registry_repo
           done
